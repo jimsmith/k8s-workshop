@@ -5,8 +5,8 @@ Scenarios:
 0. [Architecture](00-Architecture)
 1. [Connecting to Cluster](01-Connecting)
 2. [Namespaces](02-Namespaces)
-3. [ResourceQuotas](03-ResourceQuotas)
-4. [Pods](04-Pods)
+3. [Pods](02-Pods)
+4. [ResourceQuotas](04-ResourceQuotas)
 5. [Controllers](05-Controllers)
 6. [HealthChecks](06-HealthChecks)
     - Liveness
