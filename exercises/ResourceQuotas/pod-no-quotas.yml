@@ -4,5 +4,5 @@ metadata:
   name: no-quotas
 spec:
   containers:
-  - name: no-quotas
+  - name: no-quotas 
     image: nginx
