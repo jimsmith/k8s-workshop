@@ -2,7 +2,8 @@
 
 Scenarios:
 
-1. Connecting to Cluster
+0. [Architecture](Architecture)
+1. [Connecting to Cluster](Connecting)
 2. [Namespaces](Namespaces)
 3. [ResourceQuotas](ResourceQuotas)
 4. [Pods](Pods)
@@ -12,3 +13,4 @@ Scenarios:
     - Readiness Probes
 7. [Storage](Storage)
 8. [Services](Services)
+9. [Cleanup](Cleanup)
