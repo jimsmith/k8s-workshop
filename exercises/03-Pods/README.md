@@ -2,9 +2,8 @@
 
 Pods are a collection of containers that share a namespace, are colocated and coschedule together on a Kubenetes nodes.
 
+### Start a pod from a manifest
 
-
-Start a pod from a manifest
 ```bash
 kubectl apply -f single-pod-nginx.yaml
 ```
@@ -45,3 +44,11 @@ Accessing your pod
 kubectl port-forward nginx 8080:80
 ```
 Navigate to http://localhost:8080/date.log in your web browser
+
+### Cleanup
+
+```bash
+kubectl delete -f single-pod-nginx.yaml
+
+kubectl delete -f multi-pod.yaml
+```
