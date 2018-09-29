@@ -28,7 +28,7 @@ In this exercise we will be working with these controllers, later we will workin
 
 ```bash
 #Create the replicaset
-kubectl apply -f replicaset
+kubectl apply -f replicaset.yaml
 
 #Get the status of the replicaset
 kubectl get replicaset
@@ -39,14 +39,19 @@ kubectl describe replicaset frontend
 #See the status of pods deployed with replicaset
 kubectl get pods
 
-kubect port-forward <ONE_PODS_FROM_REPLICASET> 8080:80
+#select one of the pods from the ReplicaSet
+kubect port-forward <ONE_POD_FROM_REPLICASET> 8080:80
 
 #In another terminal window run
-
-kubectl logs <ONE_PODS_FROM_REPLICASET>
+kubectl logs <ONE_POD_FROM_REPLICASET>
 ```
 
 Go to http://localhost:8080/
+
+```bash
+#Scale a ReplicaSet
+kubectl scale --replicas=4 rs/frontend
+```
 
 #### Deployment Controller
 
