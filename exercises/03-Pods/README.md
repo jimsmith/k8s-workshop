@@ -4,7 +4,7 @@ Pods are a collection of containers that share a namespace, are colocated and co
 
 
 
-Start a pod from a manfist
+Start a pod from a manifest
 ```bash
 kubectl apply -f single-pod-nginx.yaml
 ```
@@ -24,10 +24,24 @@ Logs
 ```bash
 kubectl logs nginx
 ```
-
 Accessing your pod
 ```bash
-kubectl portforward nginx 8080:80
+kubectl port-forward nginx 8080:80
 ```
 
 Navigate to http://localhost:8080 in your web browser
+
+### Multi container pod
+
+Start a pod from a manifest
+```bash
+kubectl apply -f multi-pod.yaml
+```
+```bash
+kubectl describe pod multi-pod
+```
+Accessing your pod
+```bash
+kubectl port-forward nginx 8080:80
+```
+Navigate to http://localhost:8080/date.log in your web browser
