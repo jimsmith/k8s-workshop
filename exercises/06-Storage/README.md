@@ -6,13 +6,13 @@
 
 Create the persistent and the claim
 ```bash
-kubectl create -f mysql-pv.yaml
+kubectl apply -f mysql-pv.yaml
 ```
 
 Create a pod that will use it.
 
 ```bash
-kubectl create -f mysql-pod.yaml
+kubectl apply -f mysql-pod.yaml
 
 ```
 
