@@ -54,6 +54,4 @@ kubectl delete -f mysql-all.yaml
 kubectl delete -f mysql-service.yaml
 
 kubectl delete -f app.yaml
-
-kubectl delete -f expose-app.yaml
 ```

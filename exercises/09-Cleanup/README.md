@@ -1,4 +1,4 @@
-Deleting all resources used
+### Deleting all resources used
 
 
 ```bash
