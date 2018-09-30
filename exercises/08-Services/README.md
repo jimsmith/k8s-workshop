@@ -1,47 +1,59 @@
-[Services]()
+### [Services](https://kubernetes.io/docs/concepts/services-networking/service/)
 
-https://v1-10.docs.kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/
 
-### PersistentVolume
+###### Pod Deployment with health checks, PersistentVolume and claim,
+
+Since we have created the mysql pod several times, here is a yaml file that creates it all.
+
 ```bash
+#create a secret for the password between Wordpress and MYSQL
+kubectl create secret generic mysql-pass --from-literal=password=YOUR_PASSWORD
+
+#verify it is there
+kubectl get secrets
+
+#deploy mysql
+kubectl apply -f mysql-all.yaml
+
+#verify mysql deployed properly
+kubectl get deploy
+```
+
+### Services
+
+```bash
+#deploy the service for mysql
+kubectl apply -f mysql-service.yaml
+
+#verify the service has endpoints.
 kubectl get services -o wide
 ```
 
-Create the persistent and the claim
+#### Application Deployment
 ```bash
-kubectl create -f mysql-pv.yaml
-```
+#deploy the application that will use mysqld
+kubectl apply -f app.yaml
 
-### Pod Deployment
-Create a pod that will use it.
 
-```bash
-kubectl create -f mysql-pod.yaml
+kubectl get services wordpress
 
 ```
-
-### Service
-```bash
-kubectl create -f mysql-service.yaml
-```
-
-```bash
-
-kubectl get services -o wide
-
-```
-
-### Load Balancer
-
 
 ### External Load Balancer
+
+```bash
+kubectl apply -f expose-app.yaml
+
+```
 
 ### Clean up
 
 ```bash
-kubectl delete -f mysql-pv.yaml
+kubectl delete -f mysql-all.yaml
 
-kubectl delete -f mysql-pod.yaml
+kubectl delete -f mysql-service.yaml
 
-kubectl create -f mysql-service.yaml
+kubectl delete -f app.yaml
+
+kubectl delete -f expose-app.yaml
 ```
