@@ -24,19 +24,36 @@ In this exercise we will be working with these controllers, later we will workin
 
 [ReplicaSets](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) -  is the newest version of the Replication Controller. The only difference between a ReplicaSet and a Replication Controller right now is the selector support.
 
-
-
-
-
-ReplicaSets
+#### ReplicaSets
 
 ```bash
+#Create the replicaset
+kubectl apply -f replicaset.yaml
 
+#Get the status of the replicaset
+kubectl get replicaset
 
+#Retrieve detailed information about the replicaset
+kubectl describe replicaset frontend
 
+#See the status of pods deployed with replicaset
+kubectl get pods
+
+#select one of the pods from the ReplicaSet
+kubect port-forward <ONE_POD_FROM_REPLICASET> 8080:80
+
+#In another terminal window run
+kubectl logs <ONE_POD_FROM_REPLICASET>
 ```
 
-Deployment Controller
+Go to http://localhost:8080/
+
+```bash
+#Scale a ReplicaSet
+kubectl scale --replicas=4 rs/frontend
+```
+
+#### Deployment Controller
 
 ```bash
 #Create the nginx deployment
@@ -67,4 +84,13 @@ kubectl describe deployment nginx-deployment
 
 #Scale the deployment
 kubectl scale deployment nginx-deployment --replicas=10
+```
+
+### Cleanup
+
+```bash
+kubectl delete -f replicaset
+
+kubectl delete -f deploy-nginx.yaml
+
 ```

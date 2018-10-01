@@ -8,9 +8,7 @@ Scenarios:
 3. [Pods](02-Pods)
 4. [ResourceQuotas](04-ResourceQuotas)
 5. [Controllers](05-Controllers)
-6. [HealthChecks](06-HealthChecks)
-    - Liveness
-    - Readiness Probes
-7. [Storage](07-Storage)
+6. [Storage](06-Storage)
+7. [HealthChecks](07-HealthChecks)
 8. [Services](08-Services)
 9. [Cleanup](09-Cleanup)
