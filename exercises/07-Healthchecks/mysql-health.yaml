@@ -16,6 +16,8 @@ spec:
       containers:
       - image: mysql:5.7
         name: mysql
+        args:
+         - "--ignore-db-dir=lost+found"
         env:
         - name: MYSQL_ALLOW_EMPTY_PASSWORD
           value: "yes"
@@ -40,7 +42,8 @@ spec:
             # Check we can execute queries over TCP (skip-networking is off).
              command:
                - /usr/bin/mysql
-               - -ppassword
+               - -u
+               - root
                - -h
                - 127.0.0.1
                - -e
