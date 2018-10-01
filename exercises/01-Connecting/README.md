@@ -1,7 +1,7 @@
 ### Connecting to your GKE Cluster ###
 
 
-### Pre-Requisites ###
+### Prerequisites ###
 ```
 Install Google Cloud SDK: https://cloud.google.com/sdk/install
 Install kubectl: gcloud components install kubectl
