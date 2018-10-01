@@ -18,7 +18,7 @@ gcloud auth login
 gcloud container clusters get-credentials <cluster-name> --region <region>
 ```
 
-### Confirm Cluster Connectivity (ensure local FW allows outbound TCP 443) ###
+### Confirm Cluster Connectivity ###
 ```
 kubectl cluster-info
 ```
