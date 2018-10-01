@@ -65,9 +65,8 @@ kubectl get deployments
 #Where is the deployment
 kubectl rollout status deployment/nginx-deployment
 
-
 #update the deployments
-kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1
+kubectl apply -f deploy-nginx-1.9.1.yaml 
 
 #Where is the deployment
 kubectl rollout status deployment/nginx-deployment
@@ -78,12 +77,11 @@ kubectl get replicaset
 #View the pods in the deployment
 kubectl get pods
 
-
 #Get more detailed information about the deployment
 kubectl describe deployment nginx-deployment
 
 #Scale the deployment
-kubectl scale deployment nginx-deployment --replicas=10
+kubectl apply -f deploy-nginx-1.9.1-scale.yaml 
 ```
 
 ### Cleanup
