@@ -1,22 +1,24 @@
 ### Connecting to your GKE Cluster ###
 
-```pre-requisites
+
+### Pre-Requisites ###
+```
 Install Google Cloud SDK: https://cloud.google.com/sdk/install
 Install kubectl: gcloud components install kubectl
 ```
 
-Google SDK Setup
+### Google SDK Setup ###
 ```
 gcloud auth login
 (follow the verification steps)
 ```
 
-Retrieve Cluster Credentials (make sure there's no conflict with a pre-existing KUBECONFIG var)
+### Retrieve Cluster Credentials (make sure there's no conflict with a pre-existing KUBECONFIG var) ###
 ```
 gcloud container clusters get-credentials <cluster-name> --region <region>
 ```
 
-Confirm Cluster Connectivity (ensure local FW allows outbound TCP 443)
+### Confirm Cluster Connectivity (ensure local FW allows outbound TCP 443) ###
 ```
 kubectl cluster-info
 ```
