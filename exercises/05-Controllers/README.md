@@ -89,7 +89,7 @@ kubectl scale deployment nginx-deployment --replicas=10
 ### Cleanup
 
 ```bash
-kubectl delete -f replicaset
+kubectl delete -f replicaset.yaml
 
 kubectl delete -f deploy-nginx.yaml
 
