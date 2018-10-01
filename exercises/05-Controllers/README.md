@@ -87,7 +87,7 @@ kubectl apply -f deploy-nginx-1.9.1-scale.yaml
 ### Cleanup
 
 ```bash
-kubectl delete -f replicaset
+kubectl delete -f replicaset.yaml
 
 kubectl delete -f deploy-nginx.yaml
 
