@@ -9,6 +9,6 @@ Scenarios:
 4. [ResourceQuotas](04-ResourceQuotas)
 5. [Controllers](05-Controllers)
 6. [Storage](06-Storage)
-7. [HealthChecks](07-HealthChecks)
-8. [Services](08-Services)
+7. [Services](07-Services)
+8. [HealthChecks](08-HealthChecks)
 9. [Cleanup](09-Cleanup)
