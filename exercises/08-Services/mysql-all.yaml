@@ -21,14 +21,13 @@ data:
     # Apply this config only on the master.
     [mysqld]
     log-bin
-    skip-grant-tables
 ---
 
 
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: mysql
+  name: wordpress-mysql
 spec:
   selector:
     matchLabels:
@@ -43,11 +42,14 @@ spec:
       containers:
       - image: mysql:5.7
         name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
         args:
          - "--ignore-db-dir=lost+found"
-        env:   
-        - name: MYSQL_ALLOW_EMPTY_PASSWORD
-          value: "yes"
         ports:
         - containerPort: 3306
           name: mysql
@@ -59,25 +61,22 @@ spec:
         - name: config-map
           mountPath: /mnt/config-map
         livenessProbe:
-          exec:
-            command: ["mysqladmin", "ping"]
+          tcpSocket:
+            port: 3306
           initialDelaySeconds: 30
           periodSeconds: 10
           timeoutSeconds: 5
         readinessProbe:
-          exec:
-            # Check we can execute queries over TCP (skip-networking is off).
-             command:
-               - /usr/bin/mysql
-               - -u
-               - root
-               - -h
-               - 127.0.0.1
-               - -e
-               - "SHOW DATABASES"
-          initialDelaySeconds: 5
-          periodSeconds: 2
-          timeoutSeconds: 1
+         exec:
+          #Currently probes don't have access to container level env vars so we'll use the bash shell that will
+           command:
+            - bash
+            - "-c"
+            - |
+            - mysql -u root -p $MYSQL_ROOT_PASSWORD -h 127.0.0.1 -e 'SHOW DATABASES'
+         initialDelaySeconds: 5
+         periodSeconds: 2
+         timeoutSeconds: 1
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
