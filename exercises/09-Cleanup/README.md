@@ -18,6 +18,6 @@ kubectl delete rs --all
 kubectl delete quotas --all
 
 #namespace
-kubectl delete -f <insert-namespace-name-here>
+kubectl delete namespace <insert-namespace-name-here>
 
 ```
