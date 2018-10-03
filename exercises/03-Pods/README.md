@@ -19,13 +19,14 @@ Get more details of the pod
 kubectl describe pod nginx
 ```
 
-Logs
-```bash
-kubectl logs nginx
-```
 Accessing your pod
 ```bash
 kubectl port-forward nginx 8080:80
+```
+
+Logs
+```bash
+kubectl logs nginx
 ```
 
 Navigate to http://localhost:8080 in your web browser
@@ -36,10 +37,12 @@ Start a pod from a manifest
 ```bash
 kubectl apply -f multi-pod.yaml
 ```
+
 ```bash
 kubectl describe pod multi-pod
 ```
 Accessing your pod
+
 ```bash
 kubectl port-forward nginx 8080:80
 ```
