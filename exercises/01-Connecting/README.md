@@ -13,6 +13,13 @@ gcloud auth login
 (follow the verification steps)
 ```
 
+### Configure SDK ###
+```
+./gcloud-setup.sh
+```
+
+
+
 ### Retrieve Cluster Credentials (make sure there's no conflict with a pre-existing KUBECONFIG var) ###
 ```
 gcloud container clusters get-credentials <cluster-name> --region <region>

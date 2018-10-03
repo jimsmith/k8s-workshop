@@ -1,6 +1,7 @@
 terraform-iam.json
 terraformtfvars.json
 ./terraform/*
+terraform.tfvars
 *.DS_Store*
 *.swp
 *.swo
