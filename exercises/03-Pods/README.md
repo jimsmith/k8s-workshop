@@ -1,6 +1,6 @@
 [Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod/)
 
-Pods are a collection of containers that share a namespace, are colocated and coschedule together on a Kubenetes nodes.
+Pods are a collection of containers that share a namespace, are colocated and scheduled together on Kubenetes nodes.
 
 ### Start a pod from a manifest
 
