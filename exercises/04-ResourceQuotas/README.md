@@ -13,9 +13,6 @@ kubectl describe quota
 Verify qoutas
 ```bash
 kubectl get resourcequota mem-cpu-rq --output=yaml
-
-kubectl get resourcequota mem-cpu-rq --output=yaml
-
 ```
 
 Deploy specific limits and requests for pods
