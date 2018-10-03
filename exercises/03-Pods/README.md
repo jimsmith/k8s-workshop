@@ -26,7 +26,7 @@ kubectl port-forward nginx 8080:80
 
 Logs
 ```bash
-kubectl logs nginx
+kubectl logs -f nginx
 ```
 
 Navigate to http://localhost:8080 in your web browser
