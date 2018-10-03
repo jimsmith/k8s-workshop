@@ -44,6 +44,7 @@ kubectl create -f pod-no-quotas.yaml
 
 Error from server (Forbidden): error when creating "pod-no-quotas.yaml": pods "no-quotas" is forbidden: failed quota: mem-cpu-rq: must specify limits.cpu,requests.cpu
 ```
+### Please Delete Quotas! ###
 
 ```bash
 kubectl delete -f quotas.yaml
