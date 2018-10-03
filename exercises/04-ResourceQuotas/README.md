@@ -13,9 +13,6 @@ kubectl describe quota
 Verify qoutas
 ```bash
 kubectl get resourcequota mem-cpu-rq --output=yaml
-
-kubectl get resourcequota mem-cpu-rq --output=yaml
-
 ```
 
 Deploy specific limits and requests for pods
@@ -47,6 +44,7 @@ kubectl create -f pod-no-quotas.yaml
 
 Error from server (Forbidden): error when creating "pod-no-quotas.yaml": pods "no-quotas" is forbidden: failed quota: mem-cpu-rq: must specify limits.cpu,requests.cpu
 ```
+### Please Delete Quotas! ###
 
 ```bash
 kubectl delete -f quotas.yaml

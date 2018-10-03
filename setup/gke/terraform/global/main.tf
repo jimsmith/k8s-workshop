@@ -13,7 +13,7 @@ resource "google_project_iam_binding" "iam_setup" {
 }
 
 resource "google_project_iam_custom_role" "k8s-wokshop-custom-role" {
- role_id = "k8s-wokshop-oct-3"
+ role_id = "us_contino_k8s_workshop"
  title = "k8s-workshop-contino"
  permissions = ["${var.permissions}"]
  project = "${var.project}"

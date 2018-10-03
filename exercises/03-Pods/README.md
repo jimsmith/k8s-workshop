@@ -1,6 +1,6 @@
 [Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod/)
 
-Pods are a collection of containers that share a namespace, are colocated and coschedule together on a Kubenetes nodes.
+Pods are a collection of containers that share a namespace, are colocated and scheduled together on Kubenetes nodes.
 
 ### Start a pod from a manifest
 
@@ -19,13 +19,14 @@ Get more details of the pod
 kubectl describe pod nginx
 ```
 
-Logs
-```bash
-kubectl logs nginx
-```
 Accessing your pod
 ```bash
 kubectl port-forward nginx 8080:80
+```
+
+Logs
+```bash
+kubectl logs -f nginx
 ```
 
 Navigate to http://localhost:8080 in your web browser
@@ -36,12 +37,14 @@ Start a pod from a manifest
 ```bash
 kubectl apply -f multi-pod.yaml
 ```
+
 ```bash
 kubectl describe pod multi-pod
 ```
 Accessing your pod
+
 ```bash
-kubectl port-forward nginx 8080:80
+kubectl port-forward multi-pod 8080:80
 ```
 Navigate to http://localhost:8080/date.log in your web browser
 

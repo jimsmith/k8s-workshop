@@ -39,13 +39,6 @@ kubectl get services wordpress
 
 ```
 
-### External Load Balancer
-
-```bash
-kubectl apply -f expose-app.yaml
-
-```
-
 ### Clean up
 
 ```bash

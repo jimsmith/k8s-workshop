@@ -15,9 +15,9 @@ kubectl delete deploy --all
 kubectl delete rs --all
 
 #resource quotas
-kubectl delete quotas --all
+kubectl delete quota --all
 
 #namespace
-kubectl delete -f <insert-namespace-name-here>
+kubectl delete namespace <insert-namespace-name-here>
 
 ```
