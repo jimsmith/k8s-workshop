@@ -44,7 +44,7 @@ kubectl describe pod multi-pod
 Accessing your pod
 
 ```bash
-kubectl port-forward nginx 8080:80
+kubectl port-forward multi-pod 8080:80
 ```
 Navigate to http://localhost:8080/date.log in your web browser
 
